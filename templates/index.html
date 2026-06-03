@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QKD Simulation</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script>
+        async function runSimulation(randomizeEavesdropper = false) {
+            const message = document.getElementById("messageInput").value;
+            const protocol = document.getElementById("protocol").value;
+            const eavesdropper = document.getElementById("eavesdropper").checked;
+
+            const response = await fetch("/simulate", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: message, protocol: protocol, eavesdropper: eavesdropper, randomize_eavesdropper: randomizeEavesdropper })
+            });
+
+            const result = await response.json();
+            document.getElementById("output").innerHTML = `
+                <p><strong>Original Message:</strong> ${result.original_message}</p>
+                <p><strong>Alice's Sent Bits:</strong> ${result.alice_sent_bits}</p>
+                <p><strong>Alice's Received Bits:</strong> ${result.alice_received_bits}</p>
+                <p><strong>Bob's Sent Bits:</strong> ${result.bob_sent_bits}</p>
+                <p><strong>Bob's Received Bits:</strong> ${result.bob_received_bits}</p>
+                <p><strong>Shared Key:</strong> ${result.shared_key}</p>
+                <p><strong>Received Message:</strong> ${result.received_message}</p>
+                <p><strong>Eavesdropping Detected:</strong> ${result.eavesdropping_detected}</p>
+                <p><strong>Quantum Bit Error Rate (QBER):</strong> ${result.qber}</p>
+		<p><strong>Error rate:</strong> ${result.error_rate}</p>
+
+            `;
+            document.getElementById("output").scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Quantum Key Distribution Simulation</h1>
+            <label for="messageInput">Enter Message:</label>
+            <input type="text" id="messageInput" placeholder="Type your message here">
+
+            <label for="protocol">Select Protocol:</label>
+            <select id="protocol">
+                <option value="BB84">BB84</option>
+                <option value="E91">E91</option>
+            </select>
+
+            <label for="eavesdropper">Enable Eavesdropper:</label>
+            <input type="checkbox" id="eavesdropper">
+
+            <div class="button-container">
+                <button onclick="runSimulation()">Run Simulation</button>
+                <button onclick="runSimulation(true)">Randomize Eavesdropper</button>
+            </div>
+        </div>
+
+        <div class="output-container">
+            <h2>Simulation Results</h2>
+            <div id="output" class="output"></div>
+        </div>
+    </div>
+</body>
+</html>
