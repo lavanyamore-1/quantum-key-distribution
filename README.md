@@ -11,7 +11,7 @@ This project is a web-based simulation of Quantum Key Distribution (QKD) protoco
 
 ## Prerequisites
 
-- Python 3.6 or higher
+- Python 3.6 or  higher
 - Flask
 - NumPy
 
