@@ -1,42 +1,117 @@
-# Quantum Key Distribution Simulation
+#  Quantum Key Distribution (QKD)
 
-This project is a web-based simulation of Quantum Key Distribution (QKD) protocols, specifically BB84 and E91. It allows users to simulate the transmission of qubits between Alice and Bob, with the option to include an eavesdropper.
+<div align="center">
 
-## Features
+### Secure Communication Using Quantum Cryptography
 
-- Simulate the transmission of qubits using BB84 or E91 protocols.
-- Option to enable or disable an eavesdropper.
-- Randomize the eavesdropper's actions.
-- Display results including sent and received bits, shared keys, and error rates.
+Exploring the principles of quantum mechanics to enable secure key exchange and enhance data security.
 
-## Prerequisites
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
+![Quantum Computing](https://img.shields.io/badge/Quantum_Computing-8A2BE2?style=for-the-badge)
+![Research](https://img.shields.io/badge/Research_Project-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-- Python 3.6 or  higher
-- Flask
-- NumPy
+</div>
 
-## Installation and Running the Application
+---
+
+## Overview
+
+**Quantum Key Distribution (QKD)** is a cryptographic technique that leverages the principles of quantum mechanics to securely exchange encryption keys. This project demonstrates the fundamentals of quantum communication and explores how QKD can provide protection against eavesdropping and cyber threats.
+
+---
+
+##  Features
+
+* Secure Key Generation
+* Quantum Cryptography Concepts
+* Key Exchange Simulation
+* Data Analysis and Visualization
+* Eavesdropping Detection
+* Performance Evaluation
+
+---
+
+## Technologies Used
+
+| Category                | Technologies               |
+| ----------------------- | -------------------------- |
+| Programming Language    | Python                     |
+| Domain                  | Quantum Computing          |
+| Concepts                | Quantum Cryptography       |
+| Libraries               | NumPy, Matplotlib          |
+| Development Environment | Jupyter Notebook / VS Code |
+
+---
+
+## Project Structure
+
+```text
+QKD
+│
+├── src/
+├── data/
+├── notebooks/
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## ⚙️ Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/QKD.git
+```
+
+### Navigate to the Project Directory
+
+```bash
+cd QKD
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run the Project
+
+```bash
+python main.py
+```
+
+---
+
+## Future Enhancements
+
+* BB84 Protocol Implementation
+* Advanced Quantum Algorithms
+* Performance Optimization
+* Visualization Dashboard
+* Integration with Quantum Simulators
+
+---
+
+**B.Tech Information Technology Student**
+
+* Java
+* Data Structures & Algorithms
+* Python
+* SQL
+* Cloud Computing
+
+Aspiring Software Developer with an interest in Quantum Computing, AI, and Emerging Technologies.
+
+---
+
+<div align="center">
+
+### ⭐ If you found this project useful, consider giving it a star!
 
 
-1. Navigate to the directory containing `run.py`:
-   ```bash
-   cd path/to/your/project
-   ```
-   
-2. pip install -r requirements.txt
+</div>
 
-
-3. Run the application:
-   ```bash
-   python run.py
-   ```
-4. Open your web browser and go to `http://127.0.0.1:5000/` to access the simulation interface.
-
-
-
-## Usage
-
-- Enter the number of qubits to simulate.
-- Select the desired protocol (BB84 or E91).
-- Choose whether to enable the eavesdropper.
-- Click "Run Simulation" to see the results.
