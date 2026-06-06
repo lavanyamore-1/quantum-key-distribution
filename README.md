@@ -96,7 +96,7 @@ python main.py
 
 ---
 
-**B.Tech Information Technology Student**
+**B.E Information Technology Student**
 
 * Java
 * Data Structures & Algorithms
